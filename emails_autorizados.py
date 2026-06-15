@@ -1,1 +1,0 @@
-emails_autorizados = ["gi@gmail.com", "giubs@gmail.com"]
