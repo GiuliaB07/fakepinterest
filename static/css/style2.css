@@ -1,0 +1,134 @@
+#divBusca{
+    background-color:#2F4F4F;
+    border:solid 1px;
+    border-radius:15px;
+    width:300px;
+}
+
+#txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:260px;
+}
+
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e60023;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    color: #9b0000;
+    margin-bottom: 20px;
+}
+
+/* Estilos para a lista de resultados */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+li h2 {
+    font-size: 18px;
+    color: #000000;
+    margin: 0 0 10px 0;
+}
+
+li p {
+    font-size: 14px;
+    color: #fff5f5;
+    margin: 0 0 10px 0;
+}
+
+li a {
+    color: #e60023;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para a mensagem "Nenhum perfil encontrado" */
+p {
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* Estilos para a caixa de busca */
+.search-box-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+/* Estilos para o cabeçalho */
+.logo-pinterest {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-pinterest h1 {
+    margin-left: 10px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.restante-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.link-nav {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.link-nav:hover {
+    text-decoration: underline;
+}

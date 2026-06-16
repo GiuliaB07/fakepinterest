@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+
+{% block titulo %}
+perfil - {{usuario}}
+{% endblock %}
+
+{% block body %}
+<body>
+{% include "nav_bar.html" %}
+
+{% if form %}
+<div class="container">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style3.css')}}"/>
+   <form class="bloco-add-img" method ="POST" enctype="multipart/form-data">
+      {{  form.csrf_token }}
+      <h2>{{ usuario.username }} - Enviar foto</h2>
+
+      <div class="bloco-arquivo">
+      <label for = "foto" class="botao-arquivo">
+         Escolher arquivo
+            {{ form.foto(class = "input-arquivo", id="foto") }}
+      </label>
+      <span id="imagem-arquivo" class""></span>
+     </div>
+           
+     {{ form.botao_confirmacao(class="botao-login") }}     
+      </form>     
+      </div>
+{% else %}
+<div class="bloco-add-img">
+   <h2>{{ usuario.username }}</h2>
+</div>
+{%endif%}
+
+<div class="conteudo">
+    {% for foto in usuario.fotos %}
+        <div class="foto">
+            <img src="{{ url_for('static', filename='fotos_posts/' + foto.imagem) }}" alt="Foto">
+            {% if current_user.id == foto.id_usuario or current_user.is_admin %}
+                <a href="{{ url_for('deletar_foto', id_foto=foto.id) }}" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir esta foto?')">Excluir Foto</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<script>
+   let input = document.getElementById("foto");
+   let imagemArquivo = document.getElementById("imagem-arquivo");
+
+input.addEventListener("change", () => {
+   let inputimagem = document.querySelector("input[type=file]").files[0]
+
+   imagemArquivo.classList.add("visivel");
+   imagemArquivo.innerText = inputimagem.name;
+});
+</script>
+   </body>
+{% endblock %}

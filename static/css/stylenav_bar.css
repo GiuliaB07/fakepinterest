@@ -1,0 +1,51 @@
+header {
+    background-color: #e60023;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1)}
+
+    h1 {
+        font-size: 24px;
+        color: #333;
+    
+    }
+
+ 
+
+/* Estilos para a caixa de busca */
+.search-box-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.logo-pinterest {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-pinterest h1 {
+    margin-left: 10px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.restante-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.link-nav {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.link-nav:hover {
+    text-decoration: underline;
+}

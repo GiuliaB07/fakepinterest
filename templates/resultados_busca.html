@@ -1,0 +1,32 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da Busca</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+
+<body>
+    <header>
+        <!-- Inclua o cabeçalho usando o Jinja2 -->
+        {% include 'nav_bar.html' %}
+    </header>
+
+    <main>
+        <h1>Resultados da Busca para "{{ termo_busca }}"</h1>
+        {% if perfis %}
+            <ul>
+                {% for perfil in perfis %}
+                    <li>
+                        <h2>{{ perfil.username }}</h2>
+                        <p>E-mail: {{ perfil.email }}</p>
+                        <a href="{{ url_for('perfil', id_usuario=perfil.id) }}">Ver Perfil</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhum perfil encontrado.</p>
+        {% endif %}
+    </main>
+</body>
+</html>
